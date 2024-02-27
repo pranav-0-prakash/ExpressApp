@@ -1,0 +1,19 @@
+{
+  "name": "hospital_management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranav-0-prakash/Hospital_Management.git"
+  },
+  "author": "Pranav Prakash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranav-0-prakash/Hospital_Management/issues"
+  },
+  "homepage": "https://github.com/pranav-0-prakash/Hospital_Management#readme"
+}
