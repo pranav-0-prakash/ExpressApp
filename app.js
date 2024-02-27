@@ -1,20 +1,19 @@
 const express = require('express'); 
+const method = require('./method');
+const middleware = require('./middleware');
 const app = express();
 
-app.get('/login', (req, res) => {
-    if(db.authenticate(req.body.username, req.body.password)) {
-        res.send('You are logged in');
-    } else {
-        res.send('Invalid username or password');
-    }
+app.get('/login', method.userLogin);
+
+app.get('/',(req, res) => {
+    res.send('Home page');  
 });
 
-app.post('/signup', (req, res) => {	
-    if(db.createUser(req.body.username, req.body.password)) {
-        res.send('User created');
-    } else {
-        res.send('User already exists');
-    }
-});
+app.post('/signup', method.createUser);
+
+app.get('/dashboard', middleware.isLogin, method.userDashboard);
+app.get('/appointment', middleware.isLogin, method.userAppointments);
+
+app.get('/logout', method.userLogout);
 
 app.listen(3000, () => console.log('Server started on port 3000'));
