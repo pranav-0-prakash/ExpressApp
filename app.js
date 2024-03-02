@@ -11,9 +11,9 @@ app.get('/',(req, res) => {
 
 app.post('/signup', method.createUser);
 
-app.get('/dashboard', middleware.isLogin, method.userDashboard);
-app.get('/appointment', middleware.isLogin, method.userAppointments);
-
-app.get('/logout', method.userLogout);
+//Middleware
+app.get('/dashboard', middleware.isLoggedin, method.userDashboard);
+app.get('/appointment', middleware.isLoggedin, method.userAppointments);
+app.get('/logout', middleware.isLoggedin, method.userLogout);
 
 app.listen(3000, () => console.log('Server started on port 3000'));
