@@ -13,10 +13,15 @@ function userAppointments(req,res) {
 function userLogout(req,res) {
     res.redirect('/');
 }
+function home(req,res) {
+    console.log('Home page');
+    res.end();
+}
 module.exports = {
     userLogin,
     createUser,
     userDashboard,
     userAppointments,
-    userLogout
+    userLogout,
+    home
 }
