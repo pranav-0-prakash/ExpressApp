@@ -20,4 +20,4 @@ const dashboardSchema = new Schema({
     },
 },);
 
-const User = mongoose.model('Dashboard', dashboardSchema);
+const Dashboard = mongoose.model('Dashboard', dashboardSchema);
