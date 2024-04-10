@@ -3,9 +3,11 @@ const router = express.Router();
 const { userLogin, createUser, userDashboard, userAppointments, userLogout, home } = require('../controllers/userFunctions');
 const { isLoggedin } = require('../middleware');
 
+const app = express();
 router.get('/',home);
-router.get('/login', userLogin);
-router.post('/signup', createUser);
+router.get('/log', userLogin);
+router.use(express.json());
+router.post('/log', createUser);
 router
     .get('/dashboard', isLoggedin, userDashboard);
     // .post('/dashboard', createDashboard);

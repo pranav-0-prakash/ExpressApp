@@ -1,7 +1,7 @@
 import { model } from 'mongoose';
 
 
-const appointmentSchema = new Schema({
+const appointmentSchema = new mongoose.Schema({
     firstName:{
         type : String,
         required : true,
@@ -29,4 +29,4 @@ const appointmentSchema = new Schema({
     {timestamps: true},
 );
 
-const User = model('Dashboard', appointmentSchema);
+const User = model('Appointment', appointmentSchema);

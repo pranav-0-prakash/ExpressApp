@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const dashboardSchema = new Schema({
+const dashboardSchema = new mongoose.Schema({
     firstName:{
         type : String,
         required : true,

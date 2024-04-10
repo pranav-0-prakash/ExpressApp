@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
+const controllers = require('../controllers/userFunctions');
+const { application } = require('express');
 
-
-const userSchema = new Schema({
-    firstName:{
+const userSchema = new mongoose.Schema({
+    name:{
         type : String,
         required : true,
-    },
-    lastName:{
-        type : String,
     },
     email:{
         type : String,
@@ -30,3 +28,4 @@ const userSchema = new Schema({
 },);
 
 const User = mongoose.model('User', userSchema);
+module.exports = User;
