@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const controllers = require('../controllers/userFunctions');
-const { application } = require('express');
+
 
 const userSchema = new mongoose.Schema({
     name:{

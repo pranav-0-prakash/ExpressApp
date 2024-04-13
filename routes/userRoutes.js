@@ -4,10 +4,11 @@ const { userLogin, createUser, userDashboard, userAppointments, userLogout, home
 const { isLoggedin } = require('../middleware');
 
 const app = express();
+
 router.get('/',home);
-router.get('/log', userLogin);
 router.use(express.json());
-router.post('/log', createUser);
+router.post('/signup', createUser)
+      .post('/login', userLogin);
 router
     .get('/dashboard', isLoggedin, userDashboard);
     // .post('/dashboard', createDashboard);

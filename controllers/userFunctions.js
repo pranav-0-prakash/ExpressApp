@@ -19,6 +19,7 @@ async function userLogin(req,res) {
 
     res.send('Logged in!');
 }
+
 async function createUser(req, res) {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
@@ -35,25 +36,31 @@ async function createUser(req, res) {
 
         console.log('User created!');
         res.status(200).send('User created!');
-    } catch (err) {
+    } 
+    catch (err) {
         console.log(err);
         res.status(500).send('Error creating user');
     }
 }
+
 function userDashboard(req,res) {    
     res.send('Dashboard page');
 }
+
 function userAppointments(req,res) {
     res.send('Appointment page');
 }
+
 function userLogout(req,res,next) {
     res.redirect('/');
     next();
 }
+
 function home(req,res) {
     console.log('Home page');
     res.end();
 }
+
 module.exports = {
     userLogin,
     createUser,

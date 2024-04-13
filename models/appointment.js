@@ -1,18 +1,7 @@
-import { model } from 'mongoose';
-
+const mongoose = require('mongoose');
+const controllers = require('../controllers/userFunctions');
 
 const appointmentSchema = new mongoose.Schema({
-    firstName:{
-        type : String,
-        required : true,
-    },
-    lastName:{
-        type : String,
-    },
-    email:{
-        type : String,
-        required : true,
-    },
     date:{
         type : Date,
         required : true,
@@ -21,12 +10,24 @@ const appointmentSchema = new mongoose.Schema({
         type : Date,
         required : true,
     },
+    name:{
+        type : String,
+        required : true,
+    },
     appointment:{
         type : Boolean,
         required : true,
+    },
+    advice:{
+        type : String,
+        required : true,
+    },
+    prescription:{
+        type : String,
     },
 },
     {timestamps: true},
 );
 
 const User = model('Appointment', appointmentSchema);
+module.exports = Appointment;

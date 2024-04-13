@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 function connect() {
-    mongoose.connect('mongodb://localhost:27017/Hospital_Management',{ useNewUrlParser: true, useUnifiedTopology: true })
+    mongoose.connect('mongodb://localhost:27017/Hospital_Management')
     .then(() => {
         console.log("Connected to database");
     })
